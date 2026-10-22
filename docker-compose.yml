@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: cocm_registry_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: cocm
+      POSTGRES_PASSWORD: cocm_local_dev
+      POSTGRES_DB: cocm_registry
+    ports:
+      # Host port 5433, not 5432, on purpose. A native Postgres on the dev
+      # machine binds 127.0.0.1:5432 and wins over Docker's broader *:5432
+      # bind, so anything connecting to localhost:5432 silently reaches the
+      # wrong server ("role cocm does not exist"). The old workaround was to
+      # connect over the machine's LAN IP, which breaks every time the
+      # network changes. 5433 is unshadowed, so plain localhost works and
+      # stays working.
+      - "5433:5432"
+    volumes:
+      - cocm_pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cocm -d cocm_registry"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  cocm_pg_data:

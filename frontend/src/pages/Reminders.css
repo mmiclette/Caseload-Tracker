@@ -1,0 +1,13 @@
+.reminders__due {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  color: var(--nf-text-secondary);
+}
+.reminders__due--overdue {
+  color: var(--data-critical);
+  font-weight: var(--weight-semibold);
+}
+.reminders__due--today {
+  color: var(--data-watch);
+  font-weight: var(--weight-semibold);
+}

@@ -1,0 +1,112 @@
+/*
+ * Design tokens.
+ *
+ * The NeuroFlow brand palette is defined here once, per CLAUDE.md ("Define
+ * these as CSS custom properties at the root level rather than hardcoding
+ * hex values in individual components"). Nothing below this file should
+ * contain a raw hex value.
+ *
+ * Primary Navy anchors the interface. The Accent/CTA red is reserved for
+ * calls to action and high-priority elements such as safety-risk flags —
+ * it must not compete visually with routine data, which is why the
+ * caseload list's data-red (an elevated symptom score) uses its own
+ * --data-critical token rather than the brand accent.
+ */
+
+:root {
+  /* ---- NeuroFlow brand palette (CLAUDE.md, verbatim) ---- */
+  --nf-primary: #161b4a;
+  --nf-secondary-blue: #2e4799;
+  --nf-secondary-light: #478fcc;
+  --nf-secondary-teal: #4cb6ac;
+  --nf-accent: #f16061;
+  --nf-accent-inactive: #f8a9aa;
+  --nf-text-primary: #212121;
+  --nf-text-secondary: #757575;
+  --nf-text-on-dark: #ffffff;
+  --nf-divider: #bdbdbd;
+
+  /* ---- Derived surfaces ----
+   * Tints of the brand colors, so every surface traces back to the palette
+   * instead of introducing new hues. */
+  --surface-page: #f6f7fb;
+  --surface-card: #ffffff;
+  --surface-raised: #fbfcfe;
+  --surface-sunken: #eef1f8;
+  --surface-nav: var(--nf-primary);
+  --surface-nav-hover: #232a63;
+  --surface-nav-active: #2e4799;
+  --border-subtle: #e3e7f0;
+  --border-strong: var(--nf-divider);
+  --focus-ring: var(--nf-secondary-light);
+
+  /* ---- Data semantics ----
+   * Symptom-score severity, distinct from the brand accent so a red score
+   * never reads as a button. Derived from the palette where possible:
+   * "improving" borrows the brand teal, "watch" is an amber that has no
+   * brand equivalent, "critical" is a deeper red than --nf-accent so the
+   * accent stays unique to CTAs and safety flags. */
+  --data-good: #2f8f74;
+  --data-good-bg: #e8f5f1;
+  --data-watch: #b06f00;
+  --data-watch-bg: #fdf3e2;
+  --data-critical: #c1373c;
+  --data-critical-bg: #fdecec;
+  --data-neutral: var(--nf-text-secondary);
+
+  /* Flags: yellow = needs psychiatric review, red = safety risk (the one
+   * legitimate use of the brand accent in a data cell), blue = custom. */
+  --flag-review: #d9a300;
+  --flag-safety: var(--nf-accent);
+  --flag-custom: var(--nf-secondary-light);
+
+  /* ---- Type scale (1.200 minor third, 14px base) ---- */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+  --text-2xs: 0.6875rem; /* 11px — table super-headers, chips */
+  --text-xs: 0.75rem; /* 12px — column headers, meta */
+  --text-sm: 0.8125rem; /* 13px — dense table body */
+  --text-base: 0.875rem; /* 14px — body */
+  --text-md: 1rem; /* 16px — card titles */
+  --text-lg: 1.25rem; /* 20px — page titles */
+  --text-xl: 1.5rem; /* 24px — big numbers */
+  --text-2xl: 1.875rem; /* 30px — stat tiles */
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  --leading-tight: 1.25;
+  --leading-normal: 1.5;
+
+  /* ---- Spacing (4px base) ---- */
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+
+  /* ---- Radii, shadows, motion ---- */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;
+
+  --shadow-sm: 0 1px 2px rgba(22, 27, 74, 0.06);
+  --shadow-md: 0 2px 8px rgba(22, 27, 74, 0.08);
+  --shadow-lg: 0 8px 24px rgba(22, 27, 74, 0.12);
+
+  --transition-fast: 120ms ease;
+
+  /* ---- Layout ---- */
+  --sidebar-width: 232px;
+  --sidebar-width-collapsed: 60px;
+  --topbar-height: 56px;
+}

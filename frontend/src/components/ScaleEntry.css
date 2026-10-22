@@ -1,0 +1,177 @@
+.scale {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--surface-card);
+}
+
+.scale__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  background: var(--surface-sunken);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.scale__title {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--nf-primary);
+}
+
+.scale__total {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.scale__total-label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--nf-text-secondary);
+}
+.scale__total-input {
+  width: 68px;
+  padding: var(--space-1) var(--space-2);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-weight: var(--weight-semibold);
+}
+.scale__max {
+  font-size: var(--text-xs);
+  color: var(--nf-text-secondary);
+}
+.scale__progress {
+  font-size: var(--text-xs);
+  color: var(--nf-text-secondary);
+}
+.scale__progress.is-complete {
+  color: var(--data-good);
+  font-weight: var(--weight-medium);
+}
+
+/* ---- Question matrix ---- */
+.scale__matrix {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+}
+
+.scale__prompt {
+  text-align: left;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--nf-primary);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-raised);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.scale__option-head {
+  padding: var(--space-2) var(--space-2);
+  background: var(--surface-raised);
+  border-bottom: 1px solid var(--border-subtle);
+  border-left: 1px solid var(--border-subtle);
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-semibold);
+  color: var(--nf-secondary-blue);
+  text-align: center;
+  width: 108px;
+  line-height: var(--leading-tight);
+}
+
+.scale__item {
+  padding: var(--space-2) var(--space-4);
+  text-align: left;
+  font-weight: var(--weight-normal);
+  border-bottom: 1px solid var(--border-subtle);
+  line-height: var(--leading-normal);
+}
+.scale__item-number {
+  color: var(--nf-text-secondary);
+  margin-right: 2px;
+}
+
+.scale__cell {
+  border-bottom: 1px solid var(--border-subtle);
+  border-left: 1px solid var(--border-subtle);
+  text-align: center;
+  padding: 0;
+}
+
+.scale__matrix tbody tr:hover th,
+.scale__matrix tbody tr:hover td {
+  background: var(--surface-raised);
+}
+/* Answered rows get a quiet teal wash — the modern equivalent of the CTMS's
+   highlighted row, without its heavy green striping. */
+.scale__matrix tbody tr.is-answered th,
+.scale__matrix tbody tr.is-answered td {
+  background: var(--data-good-bg);
+}
+
+.scale__radio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  padding: var(--space-2);
+  cursor: pointer;
+}
+.scale__radio-value {
+  font-size: var(--text-xs);
+  color: var(--nf-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Functional impairment (displayed, not scored) ---- */
+.scale__impairment {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--surface-raised);
+}
+.scale__impairment-question {
+  font-size: var(--text-sm);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-2);
+}
+.scale__impairment-note {
+  display: inline-block;
+  margin-left: var(--space-2);
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--surface-sunken);
+  font-size: var(--text-2xs);
+  font-weight: var(--weight-semibold);
+  color: var(--nf-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.scale__impairment-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-5);
+}
+.scale__impairment-option {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  cursor: pointer;
+}
+
+.scale__attribution {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-2xs);
+  color: var(--nf-text-secondary);
+}
+
+.scale__direct-entry {
+  padding: var(--space-4);
+  font-size: var(--text-sm);
+  color: var(--nf-text-secondary);
+}

@@ -1,0 +1,43 @@
+/* Caseload-specific tweaks on top of the shared data-table styles. */
+
+.caseload {
+  min-width: 1180px; /* the confirmed column set doesn't compress below this */
+}
+
+.caseload__name {
+  font-weight: var(--weight-medium);
+  white-space: nowrap;
+}
+
+.caseload__legend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.caseload__legend .flag-dot {
+  margin-left: var(--space-2);
+}
+.caseload__legend-sep {
+  margin: 0 var(--space-1);
+  color: var(--border-strong);
+}
+
+/* Filter controls in the page header's action row. */
+.filter {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+.filter__label {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--nf-text-secondary);
+  white-space: nowrap;
+}
+.filter__control {
+  width: auto;
+  min-width: 160px;
+  font-size: var(--text-base);
+}
